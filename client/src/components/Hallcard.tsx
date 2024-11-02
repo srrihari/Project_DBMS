@@ -19,7 +19,7 @@ const HallCard = ({ hallName, acc, price, ht, id }: HallCardProps) => {
     <Card className="w-full max-w-md mx-auto">
       <CardContent className="pt-6">
         <h2 className="text-2xl font-bold text-center mb-4">{hallName}</h2>
-        <div>{acc}</div>
+        <div>Price: {price}</div>
       </CardContent>
 
       <CardFooter className="justify-center">

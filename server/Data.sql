@@ -49,14 +49,16 @@ VALUES(
         'tharun4106@gmail.com'
     );
 INSERT INTO Organizer(
+        organizer_id,
         organizer_name,
         organizer_password,
         organizer_email
     )
 VALUES(
-        'Srri',
-        'srri123',
-        'srri@icloud.com'
+        5,
+        'Priyajit',
+        'Priyajit123',
+        'priyajit@gmail.com'
     );
 INSERT INTO Hall(
         hall_name,
@@ -106,11 +108,34 @@ VALUES(
         2500,
         "#AC,Big Car Parking, Wedding"
     );
+
 INSERT INTO Customer
 VALUES(1, "Priyajit", "priya", "priya@gmail.com")
 INSERT INTO Booking
 VALUES(1, 1, 1, "2024-11-09", 1)
 select *
 from Customer;
-DROP TABLE customer;
-DROP DATABASE EVENT;
+
+DELETE FROM hall;
+
+DROP TABLE hall;
+
+DELETE FROM Hall WHERE hall_id = 1;
+
+ALTER TABLE Booking
+DROP FOREIGN KEY booking_ibfk_2;
+
+ALTER TABLE Booking
+ADD CONSTRAINT booking_ibfk_2 FOREIGN KEY (hall_id) REFERENCES Hall(hall_id) ON DELETE CASCADE;
+
+INSERT INTO Hall (hall_name, hall_venue, hall_owner, hall_price, hall_accommodation, hall_tags) VALUES
+('Chennai Grand Convention Center', 'Nungambakkam', 1, 70000, 400, 'wedding,conference,seminar,AC'),
+('Beachside Banquet Hall', 'ECR', 2, 45000, 300, 'wedding,party,reception,AC,Veg'),
+('Sky Lounge', 'T Nagar', 3, 85000, 200, 'birthday,party,corporate,NON-AC'),
+('Heritage Hall', 'Mylapore', 4, 150000, 250, 'wedding,cultural,AC,Veg'),
+('Royal Garden Hall', 'Guindy', 5, 62200, 350, 'wedding,conference,retreat,AC'),
+('Lakeview Banquet', 'Adyar', 1, 50000, 180, 'wedding,party,exhibition,AC'),
+('Vibrant Plaza', 'Anna Nagar', 2, 66000, 220, 'conference,seminar,meeting,AC'),
+('Coastal Pavilion', 'Palavakkam', 3, 28000, 500, 'wedding,party,reception,NON-AC,child-friendly'),
+('Starlit Rooftop', 'Kilpauk', 4, 40000, 300, 'birthday,corporate,meeting,NON-AC,Veg'),
+('Chennai Celebration Hall', 'Pallavaram', 5, 113000, 150, 'wedding,party,conference,AC');
