@@ -146,6 +146,18 @@ The application uses the following main tables:
 - Bookings link Customers to Halls
 - Automatic booking confirmation based on availability
 
+### 📊 Entity-Relationship Diagram
+
+The following ER diagram illustrates the complete database structure and relationships:
+
+![Entity-Relationship Diagram](images/Final_ER.png)
+
+### 🏗️ UML Class Diagram
+
+The UML class diagram shows the system's object-oriented design and class relationships:
+
+![UML Class Diagram](images/UML_Class_Diagram_Updated.png)
+
 ## 🔗 API Endpoints
 
 ### Halls
